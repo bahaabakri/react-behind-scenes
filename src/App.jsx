@@ -13,6 +13,7 @@ function App() {
 
   function handleSetClick(enteredNumber) {
     setChosenCount(enteredNumber);
+    setChosenCount(prevState => prevState + 1)
   }
 
   return (
@@ -20,7 +21,7 @@ function App() {
       <Header />
       <main>
         <CounterInput handleSetClick={handleSetClick}/>
-        <Counter initialCount={chosenCount} />
+        <Counter key={chosenCount} initialCount={chosenCount} />
       </main>
     </>
   );
